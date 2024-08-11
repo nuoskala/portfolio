@@ -42,7 +42,7 @@ p {
   position: absolute;
   left: 0;
   top: 0;
-  height: 3rem;
+  height: 5vh;
   width: 80vw;
   padding: 10px 0;
   padding-left: 10vw;
@@ -60,7 +60,6 @@ p {
   text-decoration: none;
   padding-left: 1rem;
   padding-right: 1rem;
-  padding-top: 1.4rem;
 }
 .navbar-link:after {
   display:block;
@@ -79,12 +78,12 @@ p {
   border-color: transparent;
 }
 .navbar-icon{
-  font-size: 2.5rem;
+  font-size: 1.8rem;
   color: var(--cta-color-light);
-  border: 5px solid transparent;  /* to prevent other elements to move when icon is hovered */
+  border: 3px solid transparent;  /* to prevent other elements to move when icon is hovered */
   outline: 2px solid transparent;} /* same */
 .navbar-icon:hover, .navbar-icon:focus{
-  border: 5px solid transparent;
+  border: 3px solid transparent;
   outline: 2px solid var(--cta-color-light);
   color: var(--main-text-color);
   border-radius: 50%;
