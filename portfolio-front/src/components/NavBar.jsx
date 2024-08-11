@@ -1,7 +1,7 @@
 
 import {
   BrowserRouter as Router,
-  Routes, Route, Link
+  Routes, Route //, Link
 } from 'react-router-dom'
 
 import { FaGithub } from "react-icons/fa";
@@ -9,7 +9,7 @@ import { HashLink } from 'react-router-hash-link';
 
 import Home from './Home'
 import About from './About'
-import Contact from './Contact'
+// import Contact from './Contact'
 import Projects from './Projects';
 
 const NavBar = () => {
@@ -18,6 +18,8 @@ const NavBar = () => {
     window.open(url, '_blank', 'noopener, noreferrer');
   }
 
+  // <Link className="navbar-link" to="/contact">contact</Link>
+  // <Route path="/contact" element={<Contact />} />
 
   return (
     <Router>
@@ -31,7 +33,7 @@ const NavBar = () => {
 
         <div className='navbar-middle'></div>
 
-        <Link className="navbar-link" to="/contact">contact</Link>
+        
         <button className='navbar-button' 
                 onClick={() => openInNewTab('https://github.com/nuoskala')}> <FaGithub className='navbar-icon'/>
         </button>
@@ -43,7 +45,8 @@ const NavBar = () => {
         <Route index element={<Home />} />
         <Route path="/home#about" element={<About />} />
         <Route path="/home#projects" element={<Projects />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="*" element={<Home />} />
+        
 
       </Routes>
     </Router>
