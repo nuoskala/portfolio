@@ -1,0 +1,62 @@
+:root {
+  /* backgrounds */
+  --background-color: #110E0C;          /* main background color, for the whole page*/
+  --background-color-element: #1A1614;  /* used for elements / cards*/
+
+  /* text */
+  --title-color: #F1EEEC;               /* for titles, brighter */
+  --main-text-color: #DEDBD9;           /* for main text content and dark buttons, a bit darker */
+  --text-color-dark: #221D1A;           /* for text on light backgrounds, dark */
+
+  /* buttons */
+  --button-bgcolor-dark: #171F24;       /* dark background for buttons - dark secondary color */
+  --button-bgcolor-blue: #25455A;       /* blue background for buttons - light secondary color */
+  --button-bgcolor-light: #C1B4A8;      /* light background for buttons */
+
+  /* call to action color */
+  --cta-color-light: #DF894A;
+  --cta-color-dark: #905B34;            
+}
+
+/* --- --- --- */
+
+body {
+  background-color: var(--background-color) ;
+  padding-top: 60px;
+}
+
+h1 {
+  color: var(--title-color);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--background-color-element);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  font-size: 1.2rem;
+  padding: 10px 0;
+}
+
+.navbar-left{
+  margin-left: 1rem;
+}
+.navbar-left-elt{
+  text-decoration: none;
+  padding: 1rem;
+  color: var(--main-text-color);
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  margin-right: 1rem;
+  color: var(--cta-color-light)
+}
+
+
