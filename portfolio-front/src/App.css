@@ -27,11 +27,15 @@ body {
 
 h1 {
   color: var(--title-color);
-  display:inline-block; /* TODO test, remove */
 }
 
-p {
-  color: var(--main-text-color)
+p.name {
+  white-space: nowrap;
+  color: var(--main-text-color);
+  font-family: cursive;
+  font-size: 1.1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .navbar { 
@@ -43,10 +47,10 @@ p {
   left: 0;
   top: 0;
   height: 5vh;
-  width: 80vw;
+  width: 90vw;
   padding: 10px 0;
-  padding-left: 10vw;
-  padding-right: 10vw;
+  padding-left: 5vw;
+  padding-right: 5vw;
 }
 
 .navbar-middle {

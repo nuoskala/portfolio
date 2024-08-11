@@ -23,6 +23,8 @@ const NavBar = () => {
     <Router>
     <nav className='navbar'>
 
+        <div><p className='name'>Clara Nuoskala</p></div>
+
         <HashLink className='navbar-link' to={'/home'}>home</HashLink>
         <HashLink className='navbar-link' to={'/home#about'}>about</HashLink>
         <HashLink className='navbar-link' to={'/home#projects'}>projects</HashLink>
