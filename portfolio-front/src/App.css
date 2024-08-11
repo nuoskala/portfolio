@@ -29,8 +29,11 @@ h1 {
   color: var(--title-color);
 }
 
-.navbar {
-  
+p {
+  color: var(--main-text-color)
+}
+
+.navbar { 
   display: flex;
   justify-content: space-between;
   align-items: center;

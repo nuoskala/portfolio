@@ -5,11 +5,12 @@ import {
 } from 'react-router-dom'
 
 import { FaGithub } from "react-icons/fa";
+import { HashLink } from 'react-router-hash-link';
 
 import Home from './Home'
 import About from './About'
-import Projects from './Projects'
 import Contact from './Contact'
+import Projects from './Projects';
 
 const NavBar = () => {
   return (
@@ -17,10 +18,9 @@ const NavBar = () => {
     <nav className='navbar'>
 
       <div className="navbar-left">
-        <Link className="navbar-link" to="/">home</Link>
-        <Link className="navbar-link" to="/about">about</Link>
-        <Link className="navbar-link" to="/projects">projects</Link>
-        
+        <Link className="navbar-link" to="/home">home</Link>
+        <HashLink className='navbar-link' to={'/home#about'}>about</HashLink>
+        <HashLink className='navbar-link' to={'/home#projects'}>projects</HashLink>
       </div>
 
       <div className="navbar-center">
@@ -34,10 +34,12 @@ const NavBar = () => {
     </nav>
 
     <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/projects" element={<Projects />} />
+        <Route path="/home" element={<Home />} />
+        <Route index element={<Home />} />
+        <Route path="/home#about" element={<About />} />
+        <Route path="/home#projects" element={<Projects />} />
         <Route path="/contact" element={<Contact />} />
+
       </Routes>
     </Router>
   )
