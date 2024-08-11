@@ -17,14 +17,18 @@ const NavBar = () => {
     <nav className='navbar'>
 
       <div className="navbar-left">
-        <Link className="navbar-left-elt" to="/">home</Link>
-        <Link className="navbar-left-elt" to="/about">about</Link>
-        <Link className="navbar-left-elt" to="/projects">projects</Link>
-        <Link className="navbar-left-elt" to="/contact">contact</Link>
+        <Link className="navbar-link" to="/">home</Link>
+        <Link className="navbar-link" to="/about">about</Link>
+        <Link className="navbar-link" to="/projects">projects</Link>
+        
+      </div>
+
+      <div className="navbar-center">
       </div>
 
       <div className="navbar-right">
-        <FaGithub/>
+        <Link className="navbar-link" to="/contact">contact</Link>
+        <FaGithub className="navbar-icons"/>
       </div>
 
     </nav>

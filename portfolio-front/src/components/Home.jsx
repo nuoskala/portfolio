@@ -1,6 +1,3 @@
-import './Home.css'
-  
-
 const Home = () => (
     <div>
     <h1>The home page</h1>
