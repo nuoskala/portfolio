@@ -13,23 +13,26 @@ import Contact from './Contact'
 import Projects from './Projects';
 
 const NavBar = () => {
+
+  const openInNewTab = (url) => {
+    window.open(url, '_blank', 'noopener, noreferrer');
+  }
+
+
   return (
     <Router>
     <nav className='navbar'>
 
-      <div className="navbar-left">
-        <Link className="navbar-link" to="/home">home</Link>
+        <HashLink className='navbar-link' to={'/home'}>home</HashLink>
         <HashLink className='navbar-link' to={'/home#about'}>about</HashLink>
         <HashLink className='navbar-link' to={'/home#projects'}>projects</HashLink>
-      </div>
 
-      <div className="navbar-center">
-      </div>
+        <div className='navbar-middle'></div>
 
-      <div className="navbar-right">
         <Link className="navbar-link" to="/contact">contact</Link>
-        <FaGithub className="navbar-icons"/>
-      </div>
+        <button className='navbar-button' 
+                onClick={() => openInNewTab('https://github.com/nuoskala')}> <FaGithub className='navbar-icon'/>
+        </button>
 
     </nav>
 
@@ -42,6 +45,7 @@ const NavBar = () => {
 
       </Routes>
     </Router>
+
   )
 }
 
