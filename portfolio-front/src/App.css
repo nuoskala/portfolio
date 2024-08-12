@@ -1,27 +1,26 @@
 :root {
-  /* backgrounds */
-  --background-color: #110E0C;          /* main background color, for the whole page*/
-  --background-color-element: #1A1614;  /* used for elements / cards*/
+  /* main (dark) color */
+  --dark-100: hsl(0, 0%, 5%);          /* for body background color*/
+  --dark-200: #262626;         /* for cards background color*/
+  --dark-300: hsl(0, 0%, 25%);         /* for buttons */
+  --dark-800: hsl(0, 0%, 75%);         /* light background / for buttons */
 
-  /* text */
-  --title-color: #F1EEEC;               /* for titles, brighter */
-  --main-text-color: #DEDBD9;           /* for main text content and dark buttons, a bit darker */
-  --text-color-dark: #221D1A;           /* for text on light backgrounds, dark */
+  /* secondary (blue) color */ 
+  --sec-color: #9EC0D6;
+   
+  /* accent / call to action (orange) color */
+  --cta-color-light: hsl(25, 70%, 60%);
+  --cta-color-dark: hsl(25, 70%, 40%);  
 
-  /* buttons */
-  --button-bgcolor-dark: #171F24;       /* dark background for buttons - dark secondary color */
-  --button-bgcolor-blue: #25455A;       /* blue background for buttons - light secondary color */
-  --button-bgcolor-light: #C1B4A8;      /* light background for buttons */
-
-  /* call to action color */
-  --cta-color-light: #DF894A;
-  --cta-color-dark: #905B34;            
+  /* text color */
+  --title-color: #f2f2f2;       /* for titles, brighter */
+  --content-color: #bfbfbf;  /* 999999 #DEDBD9; */     /* <=> dark-600 ; for main text content */
 }
 
 /* --- --- --- */
 
 body {
-  background-color: var(--background-color) ;
+  background-color: var(--dark-100) ;
   padding-top: 60px;
 }
 
@@ -30,9 +29,15 @@ h1 {
   text-align: center;
 }
 
+h2 {
+  color: var(--content-color);
+  text-align: center;
+}
+
+
 p.name {
   white-space: nowrap;
-  color: var(--main-text-color);
+  color: var(--content-color);
   font-family: cursive;
   font-size: 1.1rem;
   padding-left: 1rem;
@@ -43,7 +48,7 @@ p.name {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--background-color-element);
+  background-color: var(--dark-100);
   position: absolute;
   left: 0;
   top: 0;
@@ -61,7 +66,7 @@ p.name {
 .navbar-link{
   display: inline-block;
   font-size: 1rem;
-  color: var(--main-text-color);
+  color: var(--content-color);
   text-decoration: none;
   padding-left: 1rem;
   padding-right: 1rem;
@@ -69,7 +74,7 @@ p.name {
 .navbar-link:after {
   display:block;
   content: '';
-  border-bottom: solid 3px var(--button-bgcolor-blue);  
+  border-bottom: solid 3px var(--sec-color);  
   transform: scaleX(0);  
   transition: transform 250ms ease-in-out;
 }
@@ -90,7 +95,7 @@ p.name {
 .navbar-icon:hover, .navbar-icon:focus{
   border: 3px solid transparent;
   outline: 2px solid var(--cta-color-light);
-  color: var(--main-text-color);
+  color: var(--content-color);
   border-radius: 50%;
   transition: .1s;
   transform: scale(1.1);
@@ -98,19 +103,182 @@ p.name {
 
 /* --- --- --- About --- --- --- */
 
-.container {
+.skills-container {
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 89vw; /* TODO why not 90 (100 - 2*5 padding)?*/
-  padding-left: 5vw;
-  padding-right: 5vw;
+  width: 75vw;
+  margin: 0 auto;
 }
 
-.item {
-  width: 25vw;
+.skills-item {
+  width: 25%;
   height: 100px;
-  background-color: var(--background-color-element);
+  background-color: var(--dark-200);
   text-align: center;
+}
+
+/* --- --- --- Resume timeline --- --- --- */
+
+.resume-container {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative; 
+  justify-content: space-around;
+  width: 50vw;
+  margin: 0 auto;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+  border-radius: 25px;
+}
+
+
+/* odd items */
+.resume-container .resume-item {
+  border-radius: 15px;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  position: relative;
+  width: 45%;
+  margin-left: calc(50% + 2vw);
+  background-color: var(--dark-200);
+  padding: 2vh 2vw;
+  margin-bottom: -5vh;
+}
+
+/* even items */
+.resume-container .resume-item:nth-child(even) {
+  justify-content: flex-end;
+  text-align: right;
+  margin-right: calc(50% + 2vw);
+  margin-left: auto;
+
+}
+
+
+/* vertical bar in between */
+.resume-container:after {
+  display: block;
+  background-color: var(--sec-color);
+  content: '';
+  position: absolute;
+  top: 5vh;
+  left: calc(50% - 2px);
+  width: 4px;
+  height: calc(100% - 5vh) ;
+  border-radius: 5px;
+}
+
+
+/* ... content ... */
+
+/* tags */
+.resume-item .tag {
+    border-radius: 5px;
+    position: relative;
+    margin: 5px;
+    font-size: 10pt;
+    padding: 5px;
+  }
+
+
+/* date and location */
+.resume-item .dateLocation {
+  position: relative;
+  width: 100%;
+  padding: 0 5px;
+  font-size: 10pt;
+  color: var(--content-color);
+}
+
+
+
+
+/* title */
+.resume-item .title {
+  position: relative;
+  color: var(--sec-color); 
+  width: 100%;
+  font-size: 14pt;
+  padding: 5px;
+  font-weight: bold;
+  max-height: fit-content;
+}
+
+/* description */
+.resume-item .description {
+  position: relative;
+  font-size: 11pt;
+  font-style: italic;
+  padding: 5px;
+  color: var(--title-color);
+  width: 100%;
+}
+
+
+
+/* content */
+.resume-item .content {
+  position: relative;
+  font-size: 11pt;
+  padding: 5px;
+  color: var(--content-color);
+}
+
+/* links */
+.resume-item a {
+  position: relative;
+  font-size: 11pt;
+  padding: 5px;
+  color: var(--content-color);
+}
+.resume-item a:hover {
+    color: var(--sec-color);
+}
+
+.resume-container .resume-item .circle {
+  width: 15px;
+	height: 15px;
+	background-color: var(--dark-100);
+	border-radius: 50%;
+  border: 3px solid var(--sec-color);
+  position: absolute;
+  top: calc(50% - 10px);
+  left: calc(-2vw - 10px);
+  right: 0;
+  z-index: 100;
+  
+  /* .resume-container .resume-item:nth-child(odd) .circle {
+	width: 0;
+	height: 0;
+	border-top: 8px solid transparent;
+	border-left: 16px solid var(--sec-color);
+	border-bottom: 8px solid transparent;
+  position: absolute;
+  top: calc(50% - 5px);
+  left: calc(-2vw);
+  right: 0;
+  z-index: 100;
+  */
+}
+.resume-container .resume-item:nth-child(even) .circle{
+  
+  left: auto;
+  right: calc(-2vw - 10px);
+  
+
+  /*
+  width: 0;
+	height: 0;
+	border-top: 8px solid transparent;
+	border-right: 16px solid var(--sec-color);
+	border-bottom: 8px solid transparent;
+  position: absolute;
+  top: calc(50% - 5px);
+  left: auto;
+  right: calc(-2vw);
+  z-index: 100;
+  */
 }
