@@ -107,16 +107,46 @@ p.name {
   color: white;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  width: 75vw;
+  align-items: stretch;
+  width: 80vw;
   margin: 0 auto;
 }
 
-.skills-item {
-  width: 25%;
-  height: 100px;
-  background-color: var(--dark-200);
+.skills-title {
+  color: var(--title-color);
   text-align: center;
+  font-weight: normal;
+  white-space: pre-line;
+  width: 100%;
+}
+.skills-subcontainer:hover .skills-title {
+  -webkit-text-stroke: 1px var(--title-color); /* appear like bold and prevent shifting*/
+}
+
+.skills-subcontainer {
+  border: 2px solid transparent;
+  width: 25%;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.skills-subcontainer:hover{
+  border-image: linear-gradient(to left top, var(--cta-color-light), var(--dark-100), var(--sec-color)) 1;
+  border-width: 2px;
+}
+
+.skills-item {
+  border-radius: 20px;
+  padding: 10px;
+  margin: 10px 25px;
+  min-width: 100px;
+  font-size: 11pt;
+  text-align: center;
+  border: 2px solid var(--sec-color);
 }
 
 /* --- --- --- Resume timeline --- --- --- */
@@ -250,7 +280,8 @@ p.name {
   right: 0;
   z-index: 100;
   
-  /* .resume-container .resume-item:nth-child(odd) .circle {
+  /* to make triangle / arrows
+  .resume-container .resume-item:nth-child(odd) .circle {
 	width: 0;
 	height: 0;
 	border-top: 8px solid transparent;
@@ -264,12 +295,10 @@ p.name {
   */
 }
 .resume-container .resume-item:nth-child(even) .circle{
-  
   left: auto;
   right: calc(-2vw - 10px);
   
-
-  /*
+  /* to make triangle / arrows
   width: 0;
 	height: 0;
 	border-top: 8px solid transparent;

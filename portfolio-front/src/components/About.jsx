@@ -11,7 +11,7 @@ const resumeData = [
         ],
         date: 'Nov. 2023 - May 2024',
         tags: ['Suomi'],
-        id: 'Fullstack Open'
+        id: 'Arffman'
     },
   {
       title: 'Full Stack Development ',
@@ -128,6 +128,14 @@ const resumeData = [
 
 ];
 
+const skillDevData = ['React', 'JavaScript', 'HTML', 'CSS', 'Node.js', 'Express'];
+const skillProgData = ['Python', 'bash', 'Git', 'ESLint', 'Linux environment'];
+const skillLanguageData = [
+    'French (native)', 'English (fluent)', 'Finnish (intermediate - B1)',
+];
+
+
+const skillData = {skillDevData, skillProgData, skillLanguageData}
 
 
 const Tag = (prop) => {
@@ -200,20 +208,41 @@ const ResumeItem = (prop) => {
   )
 }
 
-const Skills = () => (
-  <div className="skills-container">
-    <div className="skills-item">
-      <p>front end</p>
-    </div>
-    <div className="skills-item">
-      <p>back end</p>
-    </div>
-    <div className="skills-item">
-      <p>others</p>
+const Skills = ({data}) => 
+    {
+    const skillsDev = data.skillDevData.map((s, index )=>
+        <div key={index} className="skills-item">{s}</div>
+    )
+    const skillsProg = data.skillProgData.map((s, index )=>
+        <div key={index} className="skills-item">{s}</div>
+    )
+    const skillsLanguageSoftskill = data.skillLanguageData.map((s, index )=>
+        <div key={index} className="skills-item">{s}</div>
+    )
+        
+    return (
+    <div className="skills-container">  
+
+    <div className="skills-subcontainer">
+    <p className="skills-title">Programming</p>
+        {skillsProg}
     </div>
 
-  </div>
-)
+    <div className="skills-subcontainer">
+        <p className="skills-title">Full Stack</p>
+        {skillsDev}
+    </div>
+
+
+    <div className="skills-subcontainer">
+    <p className="skills-title">Language</p>
+
+        {skillsLanguageSoftskill}
+    </div>
+    </div>
+
+    )
+    }
 
 
 
@@ -244,7 +273,7 @@ const About = () => {
       <h1>The about page</h1>
 
       <h2>Skills</h2>
-      <Skills />
+      <Skills data={skillData} />
 
       <h2>Resume</h2>
       <Resume />
