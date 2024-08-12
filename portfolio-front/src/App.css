@@ -27,6 +27,7 @@ body {
 
 h1 {
   color: var(--title-color);
+  text-align: center;
 }
 
 p.name {
@@ -95,3 +96,21 @@ p.name {
   transform: scale(1.1);
 }
 
+/* --- --- --- About --- --- --- */
+
+.container {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 89vw; /* TODO why not 90 (100 - 2*5 padding)?*/
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
+
+.item {
+  width: 25vw;
+  height: 100px;
+  background-color: var(--background-color-element);
+  text-align: center;
+}
