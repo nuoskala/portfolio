@@ -1,5 +1,5 @@
 const Projects = () => (
-  <h1>The projects page</h1>
+  <h1>Projects</h1>
 )
 
 export default Projects
