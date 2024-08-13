@@ -222,7 +222,6 @@ const Skills = ({data}) =>
         
     return (
     <div className="skills-container">  
-
     <div className="skills-subcontainer">
     <p className="skills-title">Programming</p>
         {skillsProg}
@@ -240,7 +239,6 @@ const Skills = ({data}) =>
         {skillsLanguageSoftskill}
     </div>
     </div>
-
     )
     }
 
