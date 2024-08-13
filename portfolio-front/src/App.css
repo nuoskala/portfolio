@@ -8,7 +8,8 @@
   --dark-800: hsl(0, 0%, 75%);         /* light background / for buttons */
 
   /* secondary (blue) color */ 
-  --sec-color: #9EC0D6;
+  --sec-color: hwb(204 62% 16%);
+  --sec-color-transparent: rgba(158, 192, 214, 0.9);
    
   /* accent / call to action (orange) color */
   --cta-color-light: #e08d52;
@@ -106,10 +107,21 @@ h2 {
   cursor: pointer;
 }
 .navbar-icon{
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: var(--cta-color-light);
-  border: 3px solid transparent;  /* to prevent other elements to move when icon is hovered */
-  outline: 2px solid transparent;} /* same */
+} 
+.navbar-icon:hover, .navbar-icon:focus{
+    box-shadow: 0 .7rem 1rem -0.5rem var(--cta-color-dark);
+    transform: translateY(-0.1rem);
+    transition: .2s;
+}
+/* Another effect
+  /* add this
+.navbar-icon {
+  border: 3px solid transparent;   /* to prevent other elements to move when icon is hovered  
+  outline: 2px solid red; /* same 
+}
+
 .navbar-icon:hover, .navbar-icon:focus{
   border: 3px solid transparent;
   outline: 2px solid var(--cta-color-light);
@@ -118,9 +130,11 @@ h2 {
   transition: .1s;
   transform: scale(1.1);
 }
+  */
 
 /* --- --- --- About --- --- --- */
 
+/* --- welcome --- */
 .intro {
   color: var(--content-color);
   font-size: 1rem;
@@ -167,13 +181,15 @@ h2 {
 
 .intro-link{
   display: inline-block;
-  color: var(--sec-color);
+  color: var(--content-color);
   text-decoration: none;
+  font-style: italic;
+  line-height: 1;
 }
 .intro-link:after {
   display:block;
   content: '';
-  border-bottom: solid 3px var(--sec-color);  
+  border-bottom: solid 2px var(--sec-color);  
   transform: scaleX(0);  
   transition: transform 250ms ease-in-out;
 }
@@ -183,7 +199,7 @@ h2 {
 
 
 
-
+/* --- about me --- */
 
 .about-text {
   color: var(--content-color);
@@ -198,6 +214,8 @@ h2 {
   color: var(--sec-color);
   font-style: normal;
 }
+
+/* --- skills --- */
 
 .skills-container {
   color: white;
@@ -248,7 +266,7 @@ h2 {
   border: 2px solid var(--sec-color);
 }
 
-/* --- --- --- Resume timeline --- --- --- */
+/* --- resume timeline --- */
 
 .resume-container {
   display: flex;
@@ -301,8 +319,6 @@ h2 {
   border-radius: 5px;
 }
 
-
-/* ... content ... */
 
 .resume-item {
   font-size: 1rem;
@@ -411,4 +427,119 @@ h2 {
   right: calc(-2vw);
   z-index: 100;
   */
+}
+
+
+
+
+/* --- --- --- Projects --- --- --- */
+
+/* --- --- --- Contains all projects */
+.project-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 60vw;
+  margin: 10vh auto;
+  color: var(--content-color);
+}
+
+/* --- --- Contain one project */
+.project {
+  border: 2px solid gray;
+  border-radius: 1.5rem;
+  margin: 2rem 0;
+  display: flex;
+  flex-direction: row;
+  border: 2px solid var(--sec-color);
+}
+@media (max-width: 1200px) {
+  .project {
+    flex-direction: column;
+  }
+  .project-status-current {
+    width: 5rem;  
+  }
+}
+
+.project-status-current {
+  border-radius: .5rem;
+  background-color: var(--cta-color-light);
+  color: var(--dark-100);
+  text-align: center;
+  font-size: 1rem;
+  padding: .7rem;
+  margin: 1rem;
+  height: 1rem;
+}
+
+/* --- A preview of the project */
+.project-preview {
+  min-width: 200px;
+  height: 200px;
+  background-color: var(--sec-color);
+  text-align: center;
+  margin: 3rem 5rem;
+  align-self: center;
+}
+
+/* --- Contains all info about the project*/
+.project-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 2rem;
+
+}
+
+.project-title {
+  color: var(--title-color);
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding-bottom: 1rem;
+}
+
+.project-description {
+  color: var(--content-color);
+  font-size: 1rem;
+}
+
+.project-tool-container {
+  display: flex;
+  flex-direction: row;
+  margin: 1rem 0;
+}
+
+.project-tool {
+  background-color: var(--dark-800);
+  color: var(--dark-100);
+  padding: .5rem;
+  margin: .2rem;
+  border-radius: 10px;
+  font-size: .8rem;
+  font-family: monospace;
+  font-weight: bold;
+}
+
+/* --- links of the project --- */
+.project-links {
+  display: flex;
+}
+
+.project-link-button {
+  border-color: transparent;
+  padding: 0;
+  margin-right: 2rem;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.project-link-icon {
+  color: var(--cta-color-light);
+  font-size: 2.5rem;
+}
+.project-link-icon:hover, .project-link-icon:focus{
+  box-shadow: 0 .7rem 1rem -0.5rem var(--cta-color-dark);
+  transform: translateY(-0.1rem);
+  transition: .2s;
 }
