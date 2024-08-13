@@ -120,6 +120,69 @@ h2 {
 
 /* --- --- --- About --- --- --- */
 
+.intro {
+  color: var(--content-color);
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between ;
+  width: 75vw;
+  margin: 15vh auto;
+}
+@media (max-width: 800px) {
+  .intro {
+    flex-direction: column;
+  }
+}
+.intro-pic {
+  height: 35vh;
+  object-fit: contain;
+  display: flex;
+  justify-content: center;
+}
+
+.intro-pic img {
+  height: auto;
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.intro-text {
+  min-width: 40%;
+  line-height: 1.5;
+  padding-left: 5vw;
+}
+
+.intro-text-welcome{
+  margin: 0;
+  text-align: left;
+  font-size: 4rem;
+  font-family: cursive;
+  font-weight: bold;
+  color: var(--sec-color);
+}
+
+.intro-link{
+  display: inline-block;
+  color: var(--sec-color);
+  text-decoration: none;
+}
+.intro-link:after {
+  display:block;
+  content: '';
+  border-bottom: solid 3px var(--sec-color);  
+  transform: scaleX(0);  
+  transition: transform 250ms ease-in-out;
+}
+.intro-link:hover:after { 
+  transform: scaleX(1) ;
+}
+
+
+
+
+
 .about-text {
   color: var(--content-color);
   max-width: 60ch;
@@ -142,7 +205,6 @@ h2 {
   width: 80vw;
   margin: 0 auto;
 }
-
 
 .skills-title {
   color: var(--title-color);
