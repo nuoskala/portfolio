@@ -1,6 +1,6 @@
 :root {
   /* main (dark) color */
-  --dark-100: hsl(0, 0%, 5%);          /* for body background color*/
+  --dark-100: #0d0d0d;          /* for body background color*/
   --dark-150: hsl(0, 0%, 7%);          /* for body background color*/
   --dark-200: hsl(0, 0%, 15%);         /* for cards background color*/
   --dark-300: hsl(0, 0%, 25%);         /* for buttons */
@@ -45,20 +45,24 @@ p.name {
   padding-right: 1rem;
 }
 
+
+/* navbar top is defined in NavBar component to handle scroll display */
 .navbar { 
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: var(--dark-100);
-  position: absolute;
+  position: fixed;
   left: 0;
-  top: 0;
   height: 5vh;
   width: 90vw;
   padding: 10px 0;
   padding-left: 5vw;
   padding-right: 5vw;
+  z-index: 100;
+  border-bottom: 1px solid var(--dark-200);
 }
+
 
 .navbar-middle {
   width: 80vw;
@@ -283,7 +287,7 @@ p.name {
   top: calc(50% - 10px);
   left: calc(-2vw - 10px);
   right: 0;
-  z-index: 100;
+  z-index: 90;
   
   /* to make triangle / arrows
   .resume-container .resume-item:nth-child(odd) .circle {
