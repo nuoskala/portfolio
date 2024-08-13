@@ -1,3 +1,5 @@
+import parse from "html-react-parser";
+
 const resumeData = [
     {
         title: 'Finnish courses + YKI test',
@@ -21,7 +23,7 @@ const resumeData = [
           'Introduction to modern JavaScript-based web development',
           'Focus on building single page applications with ReactJS that use REST APIs built with Node.js',
           'Debugging application, container technology,  configuration, managing runtime environments, databases',
-          '(I had not enough time to continue during my integration plan, but resumed in Aug. 2024)'],
+          '(Paused during integration plan - lack of time, resumed in Aug. 2024)'],
       date: 'June - Nov 2023',
       tags: ['Training'],
       link: {
@@ -264,11 +266,34 @@ const Resume = () => {
 
 
 
+
+
 const About = () => {
 
-  return (
+    const aboutTextList = [
+        "Starting with an idea, breaking it into steps. Going mad when something does not work as expected. Racking your brain to find out the source of the problem. Seeing the project evolve. Finally, seeing the initial idea made into reality and be proud of the <em className='about-text-em'>challenges overcome.</em>",
+
+        "I discovered programming during my last year of bachelor's studies (only to do statistics on datasets). But this introduction encouraged me to integrate computer science into my studies. So I headed for a master's degree in bioinformatics. I got a taste for programming. I mainly learned to code in Python, but I also discovered Git, linux environment and command lines, as well as other tools for processing biological data. After a PhD, where I was able to put into practice what I'd learned, I'm now interested in web development.",
+
+        "I would describe myself as a <em className='about-text-em'>fast learner</em> and <em className='about-text-em'>highly motivated</em>. I moved to Finland in the begining of 2023, I started to take Finnish lessons on the very next day. One year and a half later, I passed the YKI test (B1 level). Of course, I won't stop there :) <br> I value teamwork, because exchanging ideas and helping each other are great for mutual improvement. I'm also convinced that the most effective way to <em className='about-text-em'>learn</em> is <em className='about-text-em'>through practice</em>.",
+
+        "On a personal level, I'm interested in photography<sup>*</sup>, sewing/knitting<sup>*</sup>,  hiking, and I'm also enjoying (total beginner) skiing<sup>*</sup> and ice skating<sup>*</sup>. <br> (* Thank you Finland for being so cold, snowy and full of northen lights, which is what introduced me to these activities!)",
+    ]
+
+    const aboutText = aboutTextList.map((t, index )=>
+        <p key={index}>{parse(t)}</p>
+    )
+
+    const aboutTextFirstline = <em style={{fontStyle:"italic"}} className='about-text-em'>I love building things.</em>
+
+
+    return (
     <div>
       <h1>The about page</h1>
+      <div className="about-text">
+        {aboutTextFirstline}
+        {aboutText}
+      </div>
 
       <h2>Skills</h2>
       <Skills data={skillData} />
@@ -276,7 +301,7 @@ const About = () => {
       <h2>Resume</h2>
       <Resume />
     </div>
-  )
+    )
 }
 
 export default About

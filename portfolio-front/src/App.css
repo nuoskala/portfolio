@@ -11,7 +11,7 @@
   --sec-color: #9EC0D6;
    
   /* accent / call to action (orange) color */
-  --cta-color-light: hsl(25, 70%, 60%);
+  --cta-color-light: #e08d52;
   --cta-color-dark: hsl(25, 70%, 40%);  
 
   /* text color */
@@ -45,13 +45,6 @@ h2 {
 }
 
 
-p.name {
-  white-space: nowrap;
-  color: var(--content-color);
-  font-family: cursive;
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
 
 
 /* navbar top is defined in NavBar component to handle scroll display */
@@ -71,6 +64,15 @@ p.name {
   border-bottom: 1px solid var(--dark-200);
   font-size: 1rem;
 }
+
+.navbar p.name {
+  white-space: nowrap;
+  color: var(--content-color);
+  font-family: cursive;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 
 
 .navbar-middle {
@@ -117,6 +119,19 @@ p.name {
 
 /* --- --- --- About --- --- --- */
 
+.about-text {
+  color: var(--content-color);
+  max-width: 60ch;
+  margin: 0 auto;
+  font-size: 1rem;
+  line-height: 1.5;
+  padding: 0 10vw;
+}
+
+.about-text .about-text-em {
+  color: var(--sec-color);
+  font-style: normal;
+}
 
 .skills-container {
   color: white;
@@ -176,6 +191,7 @@ p.name {
   position: relative; 
   justify-content: space-around;
   width: 50vw;
+  min-width: 500px;
   margin: 0 auto;
   padding-top: 5vh;
   padding-bottom: 5vh;
