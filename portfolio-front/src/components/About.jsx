@@ -277,7 +277,7 @@ const About = () => {
 
         "I would describe myself as a <em className='about-text-em'>fast learner</em> and <em className='about-text-em'>highly motivated</em>. I moved to Finland in the begining of 2023, I started to take Finnish lessons on the very next day. One year and a half later, I passed the YKI test (B1 level). Of course, I won't stop there :) <br> I value teamwork, because exchanging ideas and helping each other are great for mutual improvement. I'm also convinced that the most effective way to <em className='about-text-em'>learn</em> is <em className='about-text-em'>through practice</em>.",
 
-        "On a personal level, I'm interested in photography<sup>*</sup>, sewing/knitting<sup>*</sup>,  hiking, and I'm also enjoying (total beginner) skiing<sup>*</sup> and ice skating<sup>*</sup>. <br> (* Thank you Finland for being so cold, snowy and full of northen lights, which is what introduced me to these activities!)",
+        "On a personal level, I'm interested in photography<sup>*</sup>, sewing/knitting<sup>*</sup>,  hiking, and I'm also enjoying (total beginner) skiing<sup>*</sup> and ice skating<sup>*</sup>. <br> (* Thank you Finland for being so cold, snowy and full of northern lights, which is what introduced me to these activities!)",
     ]
 
     const aboutText = aboutTextList.map((t, index )=>
@@ -289,7 +289,7 @@ const About = () => {
 
     return (
     <div>
-      <h1>The about page</h1>
+      <h1>About me</h1>
       <div className="about-text">
         {aboutTextFirstline}
         {aboutText}
