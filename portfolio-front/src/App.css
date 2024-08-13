@@ -87,6 +87,7 @@ p.name {
 .navbar-button{
   background-color: transparent;
   border-color: transparent;
+  cursor: pointer;
 }
 .navbar-icon{
   font-size: 1.8rem;
