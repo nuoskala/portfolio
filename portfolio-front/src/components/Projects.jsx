@@ -2,6 +2,9 @@ import { FaGithub } from "react-icons/fa";
 import { RxOpenInNewWindow } from "react-icons/rx";
 import parse from "html-react-parser";
 
+import pic from '../../img/portrait.png'
+
+
 const projectsData = [
   {
       title: 'Portfolio',
@@ -13,6 +16,7 @@ const projectsData = [
       githubLink: 'https://github.com/nuoskala/portfolio',
       pageLink: '',
       ongoing: true,
+      preview: pic,
       id: 'portfolio'
   },
 ]
@@ -49,9 +53,9 @@ const Ongoing = ({ongoing}) => {
   }
 }
 
-const ProjectItem = ({title, description, tools, githubLink, pageLink, ongoing}) => (
+const ProjectItem = ({title, description, tools, githubLink, pageLink, preview, ongoing}) => (
   <div className="project">
-    <div className="project-preview"></div>
+   <div className="project-preview"><img src={preview}></img></div>
     <div className="project-info">
     <div className="project-title">{title}</div>
       <div className="project-description">{parse(description)}</div>
@@ -80,6 +84,7 @@ const Projects = () => {
           tools={p.tools}
           githubLink={p.githubLink}
           pageLink={p.pageLink}
+          preview={p.preview}
           ongoing={p.ongoing}
       />)}
   </div>

@@ -475,12 +475,15 @@ h2 {
 
 /* --- A preview of the project */
 .project-preview {
-  min-width: 200px;
-  height: 200px;
-  background-color: var(--sec-color);
   text-align: center;
   margin: 3rem 5rem;
   align-self: center;
+}
+
+.project-preview img {
+  min-width: 200px;
+  height: 200px;
+
 }
 
 /* --- Contains all info about the project*/
