@@ -59,7 +59,7 @@ const NavBar = () => {
 
         <div><p className='name'>Clara Nuoskala</p></div>
 
-        <HashLink className='navbar-link' to={'/home'}>home</HashLink>
+        <HashLink className='navbar-link' to={'/#home'}>home</HashLink>
         <HashLink className='navbar-link' to={'/home#about'}>about</HashLink>
         <HashLink className='navbar-link' to={'/home#projects'}>projects</HashLink>
 
@@ -73,7 +73,7 @@ const NavBar = () => {
     </nav>
 
     <Routes>
-        <Route path="/home" element={<Home />} />
+        <Route path="/#home" element={<Home />} />
         <Route index element={<Home />} />
         <Route path="/home#about" element={<About />} />
         <Route path="/home#projects" element={<Projects />} />
