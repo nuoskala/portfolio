@@ -1,5 +1,5 @@
 import axios from 'axios'
-const baseUrl = 'http://localhost:3001/api/resumedata'
+const baseUrl =  'api/resumedata' //'http://localhost:3001/api/resumedata'
 
 const getAll = () => {
   const request = axios.get(baseUrl)
