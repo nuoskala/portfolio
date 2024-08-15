@@ -1,14 +1,14 @@
 import About from './About'
 import Projects from './Projects'
 
-import pic from '../../img/portrait.png'
+import myPicture from '../../img/clara_nuoskala.png'
 
 const Intro = () => {
 
   return (
     <div className='intro'>
 
-    <div className='intro-pic'> <img src={pic} alt="a picture of me"></img> </div>
+    <div className='intro-pic'> <img src={myPicture} alt="a picture of me"></img> </div>
 
     <div className='intro-text'>
       <p className='intro-text-welcome'>Welcome</p>

@@ -2,7 +2,7 @@ import { FaGithub } from "react-icons/fa";
 import { RxOpenInNewWindow } from "react-icons/rx";
 import parse from "html-react-parser";
 
-import pic from '../../img/portrait.png'
+import previewPortfolio from '../../img/preview_portfolio.png'
 
 
 const projectsData = [
@@ -16,7 +16,7 @@ const projectsData = [
       githubLink: 'https://github.com/nuoskala/portfolio',
       pageLink: '',
       ongoing: true,
-      preview: pic,
+      preview: previewPortfolio,
       id: 'portfolio'
   },
 ]
