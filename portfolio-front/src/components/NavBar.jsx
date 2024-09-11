@@ -1,19 +1,6 @@
-
-import {
-  BrowserRouter as Router,
-  Routes, Route //, Link
-} from 'react-router-dom'
-
 import { useState, useEffect } from 'react';
-
 import { FaGithub } from "react-icons/fa";
-import { HashLink } from 'react-router-hash-link';
 import { Link } from 'react-router-dom';
-
-import Home from './Home'
-import About from './About'
-// import Contact from './Contact'
-import Projects from './Projects';
 
 const NavBar = () => {
 
@@ -55,7 +42,6 @@ const NavBar = () => {
   // <Route path="/contact" element={<Contact />} />
 
   return (
-    <Router>
     <nav className='navbar' style={navbarStyle} >
 
         <div><p className='name'>Clara Nuoskala</p></div>
@@ -73,16 +59,7 @@ const NavBar = () => {
 
     </nav>
 
-    <Routes>
-        <Route path="/home" element={<Home />} />
-        <Route index element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="*" element={<Home />} />
-        
 
-      </Routes>
-    </Router>
 
   )
 }
