@@ -8,6 +8,7 @@ import { useState, useEffect } from 'react';
 
 import { FaGithub } from "react-icons/fa";
 import { HashLink } from 'react-router-hash-link';
+import { Link } from 'react-router-dom';
 
 import Home from './Home'
 import About from './About'
@@ -59,9 +60,9 @@ const NavBar = () => {
 
         <div><p className='name'>Clara Nuoskala</p></div>
 
-        <HashLink className='navbar-link' to={'/#home'}>home</HashLink>
-        <HashLink className='navbar-link' to={'/home#about'}>about</HashLink>
-        <HashLink className='navbar-link' to={'/home#projects'}>projects</HashLink>
+        <HashLink className='navbar-link' to={'/home'}>home</HashLink>
+        <Link className='navbar-link' to={'/about'}>about</Link>
+        <Link className='navbar-link' to={'/projects'}>projects</Link>
 
         <div className='navbar-middle'></div>
 
@@ -73,10 +74,10 @@ const NavBar = () => {
     </nav>
 
     <Routes>
-        <Route path="/#home" element={<Home />} />
+        <Route path="/home" element={<Home />} />
         <Route index element={<Home />} />
-        <Route path="/home#about" element={<About />} />
-        <Route path="/home#projects" element={<Projects />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/projects" element={<Projects />} />
         <Route path="*" element={<Home />} />
         
 

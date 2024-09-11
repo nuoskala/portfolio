@@ -32,14 +32,6 @@ const Home = () => {
     <Intro />
     </div>
 
-    <div id="about" >
-    <About/>
-    </div>
-
-    <div id="projects" >
-    <Projects/>
-    </div>
-
 
     </div>
   )
