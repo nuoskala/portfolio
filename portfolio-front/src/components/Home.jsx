@@ -3,7 +3,7 @@ import myPicture from '../../img/clara_nuoskala.png'
 const Intro = () => {
 
   return (
-    <div className='intro'>
+    <div className='col-d-6 col-t-8 col-m-6 intro'>
 
     <div className='intro-pic'> <img src={myPicture} alt="a picture of me"></img> </div>
 

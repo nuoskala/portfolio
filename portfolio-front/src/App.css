@@ -20,7 +20,70 @@
   --content-color: #bfbfbf;  /* 999999 #DEDBD9; */     /* <=> dark-600 ; for main text content */
 }
 
+
+/* --- Grid view --- */
+
+/* For mobile phones: */
+[class*="col-"] {
+  width: 100%;
+  float: left;
+  padding: 15px;
+}
+.col-m-1 {width: 8.33%;}
+.col-m-2 {width: 16.66%;}
+.col-m-3 {width: 25%;}
+.col-m-4 {width: 33.33%;}
+.col-m-5 {width: 41.66%;}
+.col-m-6 {width: 50%;}
+.col-m-7 {width: 58.33%;}
+.col-m-8 {width: 66.66%;}
+.col-m-9 {width: 75%;}
+.col-m-10 {width: 83.33%;}
+.col-m-11 {width: 91.66%;}
+.col-m-12 {width: 100%;}
+
+
+/* Likely the minimal device width ever */
+@media only screen and (max-width: 240px) {
+  body {
+    border: 5px solid red;
+  }
+}
+
+/* For tablets */
+@media only screen and (min-width: 600px) {
+  .col-t-1 {width: 8.33%;}
+  .col-t-2 {width: 16.66%;}
+  .col-t-3 {width: 25%;}
+  .col-t-4 {width: 33.33%;}
+  .col-t-5 {width: 41.66%;}
+  .col-t-6 {width: 50%;}
+  .col-t-7 {width: 58.33%;}
+  .col-t-8 {width: 66.66%;}
+  .col-t-9 {width: 75%;}
+  .col-t-10 {width: 83.33%;}
+  .col-t-11 {width: 91.66%;}
+  .col-t-12 {width: 100%;}
+}
+
+/* For desktop */
+@media only screen and (min-width: 768px) {
+.col-d-1 {width: 8.33%;}
+.col-d-2 {width: 16.66%;}
+.col-d-3 {width: 25%;}
+.col-d-4 {width: 33.33%;}
+.col-d-5 {width: 41.66%;}
+.col-d-6 {width: 50%;}
+.col-d-7 {width: 58.33%;}
+.col-d-8 {width: 66.66%;}
+.col-d-9 {width: 75%;}
+.col-d-10 {width: 83.33%;}
+.col-d-11 {width: 91.66%;}
+.col-d-12 {width: 100%;}
+}
+
 /* --- --- --- */
+
 
 body {
   background-color: var(--dark-100) ;
@@ -140,39 +203,46 @@ h2 {
   font-size: 1rem;
   display: flex;
   align-items: center;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between ;
-  width: 60vw;
   margin: 15vh auto;
+  margin-left: 25%; /* 3 columns */
 }
-@media (max-width: 800px) {
-  .intro {
-    flex-direction: column;
-  }
+/* responsive layout - tablet */
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .intro {margin-left: 16.66%; /* 2 columns */}
 }
+/* responsive layout - desktop */
+@media only screen and (min-width: 768px) {
+  .intro {margin-left: 25%; /* 3 columns */
+          flex-direction: row;}
+}
+
+
 .intro-pic {
-  height: 35vh;
   object-fit: contain;
   display: flex;
-  justify-content: flex-end;
-
+  justify-content: center;
 }
 
 .intro-pic img {
+  max-width: 250px;
   height: auto;
-  max-width: 100%;
-  border-radius: .7rem 3rem;
+  border-radius: 5px 50px; 
 }
 
 .intro-text {
   min-width: 40%;
   line-height: 1.5;
-  padding-left: 5vw;
+}
+/* responsive layout - desktop */
+@media only screen and (min-width: 768px) {
+  .intro-text {padding-left: 5vw;}
 }
 
 .intro-text-welcome{
   margin: 0;
-  text-align: left;
+  text-align: center;
   font-size: 4rem;
   font-family: cursive;
   font-weight: bold;
