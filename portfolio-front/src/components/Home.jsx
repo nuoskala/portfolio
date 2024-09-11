@@ -1,6 +1,3 @@
-import About from './About'
-import Projects from './Projects'
-
 import myPicture from '../../img/clara_nuoskala.png'
 
 const Intro = () => {
