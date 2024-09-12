@@ -125,9 +125,7 @@ h2 {
   left: 0;
   height: 5vh;
   width: 90vw;
-  padding: 10px 0;
-  padding-left: 5vw;
-  padding-right: 5vw;
+  padding: 1.5rem 5vw;
   z-index: 100;
   border-bottom: 1px solid var(--dark-200);
   font-size: 1rem;
@@ -280,7 +278,6 @@ h2 {
   margin: 0 auto;
   font-size: 1rem;
   line-height: 1.5;
-  border: 2px solid red;
 }
 
 .about-text .about-text-em {
