@@ -276,11 +276,11 @@ h2 {
 
 .about-text {
   color: var(--content-color);
-  max-width: 60ch;
+  width: min(50vw, 60ch);
   margin: 0 auto;
   font-size: 1rem;
   line-height: 1.5;
-  padding: 0 10vw;
+  border: 2px solid red;
 }
 
 .about-text .about-text-em {
