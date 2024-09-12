@@ -55,17 +55,17 @@ const Ongoing = ({ongoing}) => {
 
 const ProjectItem = ({title, description, tools, githubLink, pageLink, preview, ongoing}) => (
   <div className="project">
-   <div className="project-preview"><img src={preview}></img></div>
+    <div className="project-preview"><img src={preview}></img></div>
+    <Ongoing ongoing={ongoing}/>
     <div className="project-info">
-    <div className="project-title">{title}</div>
+      <div className="project-title">{title}</div>
       <div className="project-description">{parse(description)}</div>
       <div className="project-tool-container">{tools.map((p, index) => <div className="project-tool" key={index}>{p}</div>)}</div>
       <div className="project-links">
-      <ButtonGithub githubLink={githubLink}/>
-      <ButtonPagelink pageLink={pageLink}/>
+        <ButtonGithub githubLink={githubLink}/>
+        <ButtonPagelink pageLink={pageLink}/>
       </div>
     </div>
-    <Ongoing ongoing={ongoing}/>
   </div>
 )
 
