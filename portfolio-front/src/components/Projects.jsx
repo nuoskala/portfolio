@@ -3,6 +3,7 @@ import { RxOpenInNewWindow } from "react-icons/rx";
 import parse from "html-react-parser";
 
 import previewPortfolio from '../../img/preview_portfolio.png'
+import previewResponsiveMock from '../../img/preview_responsive_mock.png'
 
 
 const projectsData = [
@@ -19,6 +20,19 @@ const projectsData = [
       preview: previewPortfolio,
       id: 'portfolio'
   },
+  {
+    title: 'Responsive webpage',
+    description: 'A mock webpage on which I trained responsiveness. I mainly used media queries and grids. The goal was to be able to display pictures in a suitable layout and size for all types of media (smartphones, tablets and desktop computers).',
+    tools: [
+        'ReactJS',
+        'HTML/CSS'
+    ],
+    githubLink: 'https://github.com/nuoskala/responsive_mock_app/',
+    pageLink: 'https://nuoskala.github.io/responsive_mock_app/',
+    ongoing: false,
+    preview: previewResponsiveMock,
+    id: 'responsive-mock-webpage'
+},
 ]
 
 const openInNewTab = (url) => {
