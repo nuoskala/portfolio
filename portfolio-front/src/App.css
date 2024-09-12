@@ -84,6 +84,9 @@
 
 /* --- --- --- */
 
+* {
+  box-sizing: border-box;
+}
 
 body {
   background-color: var(--dark-100) ;
@@ -290,10 +293,16 @@ h2 {
 .skills-container {
   color: white;
   display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: space-between;
   align-items: stretch;
   width: 80vw;
   margin: 0 auto;
+}
+/* responsive layout - desktop */
+@media only screen and (min-width: 768px) {
+  .skills-container {flex-direction: row;}
 }
 
 .skills-title {
@@ -312,14 +321,24 @@ h2 {
 
 .skills-subcontainer {
   border: 2px solid transparent;
-  width: 25%;
   display: flex;
   flex-wrap: wrap;
   align-content: space-between;
   justify-content: center;
-  margin: 0 auto;
+  margin: 2vh auto;
   padding: 10px;
+  width: 80%;
+  min-width: 200px;
 }
+/* responsive layout - tablet */
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .skills-subcontainer {max-width: 50vw;}
+}
+/* responsive layout - desktop */
+@media only screen and (min-width: 768px) {
+  .skills-subcontainer {max-width: 350px;}
+}
+
 
 .skills-subcontainer:hover{
   border-image: linear-gradient(to left top, var(--cta-color-light), var(--dark-100), var(--sec-color)) 1;
@@ -339,96 +358,104 @@ h2 {
 /* --- resume timeline --- */
 
 .resume-container {
-  display: flex;
-  flex-wrap: wrap;
-  position: relative; 
-  justify-content: space-around;
-  width: 50vw;
-  min-width: 500px;
+  color: white;
+  width: 80vw;
+  min-width: 200px;
   margin: 0 auto;
-  padding-top: 5vh;
-  padding-bottom: 5vh;
-  border-radius: 25px;
-}
-
-
-/* odd items */
-.resume-container .resume-item {
-  border-radius: 15px;
+  margin-bottom: 10vh;
   display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
+  flex-direction: column;
   position: relative;
-  width: 45%;
-  margin-left: calc(50% + 2vw);
-  background-color: var(--dark-200);
-  padding: 2vh 2vw;
-  margin-bottom: -5vh;
+}
+/* responsive layout - desktop */
+@media only screen and (min-width: 768px) {
+  .resume-container {width: min(75vw, 1000px);}
 }
 
-/* even items */
-.resume-container .resume-item:nth-child(even) {
-  justify-content: flex-end;
-  text-align: right;
-  margin-right: calc(50% + 2vw);
-  margin-left: auto;
 
+
+.resume-item {
+  margin-top: 5vh;
+  width: 100%;
+  background-color: var(--dark-200);
+  border-radius: 15px;
+  border: 1px solid var(--sec-color);
+  padding: 2vh 2vw;
+  position: relative;
+  font-size: 1rem;
+}
+.resume-item:nth-child(odd) {
+  align-self: flex-end;
+}
+.resume-item:nth-child(even) {
+  align-self: flex-start;
+}
+/* responsive layout - tablet and desktop*/
+@media only screen and (min-width: 600px) {
+  .resume-item {
+    width: calc(50% - 2vw);
+    border: none;
+  }
+  .resume-item:nth-child(odd) {
+    align-self: flex-end;
+  }
+  .resume-item:nth-child(even) {
+    align-self: flex-start;
+  }
 }
 
 
 /* vertical bar in between */
-.resume-container:after {
-  display: block;
-  background-color: var(--sec-color);
+.resume-container::after {
+  margin-top: 5vh;
   content: '';
+  background-color: var(--sec-color);
+  width: 2px;
   position: absolute;
-  top: 5vh;
+  height: calc(100% - 5vh);
+  flex-grow: 1;
   left: calc(50% - 2px);
-  width: 4px;
-  height: calc(100% - 5vh) ;
-  border-radius: 5px;
+  z-index: -1;
+}
+/* responsive layout - tablet and desktop*/
+@media only screen and (min-width: 600px) {
+  .resume-container::after {
+    width: 4px;
+  }
 }
 
-
-.resume-item {
-  font-size: 1rem;
-}
 
 /* tags */
-.resume-item .tag {
-    border-radius: 5px;
-    position: relative;
-    margin: 5px;
-    padding: 5px;
-  }
-
+.tag-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.tag {
+  border-radius: 7px;
+  margin: 5px;
+  padding: 5px;
+  width: min-content;
+}
 
 /* date and location */
-.resume-item .dateLocation {
-  position: relative;
+.dateLocation {
   width: 100%;
   padding: 0 5px;
   color: var(--content-color);
   font-size: .8em;
 }
 
-
-
-
 /* title */
-.resume-item .title {
-  position: relative;
+.title {
   color: var(--sec-color); 
   width: 100%;
   font-size: 1.4em;
   padding: 5px;
   font-weight: bold;
-  max-height: fit-content;
 }
 
 /* description */
-.resume-item .description {
-  position: relative;
+.description {
   font-style: italic;
   padding: 5px;
   color: var(--title-color);
@@ -437,13 +464,12 @@ h2 {
 }
 
 
-
 /* content */
-.resume-item .content {
-  position: relative;
+.content {
   padding: 5px;
   color: var(--content-color);
 }
+
 
 /* links */
 .resume-item a {
@@ -455,48 +481,34 @@ h2 {
     color: var(--sec-color);
 }
 
-.resume-container .resume-item .circle {
-  width: 15px;
-	height: 15px;
-	background-color: var(--dark-100);
-	border-radius: 50%;
-  border: 3px solid var(--sec-color);
+
+
+
+.circle {
+  width: 16px;
+  height: 16px;
+  background-color: var(--dark-100);
+  border-radius: 50%;
+  border: 4px solid var(--sec-color);
   position: absolute;
-  top: calc(50% - 10px);
-  left: calc(-2vw - 10px);
-  right: 0;
-  z-index: 90;
-  
-  /* to make triangle / arrows
-  .resume-container .resume-item:nth-child(odd) .circle {
-	width: 0;
-	height: 0;
-	border-top: 8px solid transparent;
-	border-left: 16px solid var(--sec-color);
-	border-bottom: 8px solid transparent;
-  position: absolute;
-  top: calc(50% - 5px);
-  left: calc(-2vw);
-  right: 0;
-  z-index: 100;
-  */
+  top: calc(50% - 2px);
+  /*left: calc(50% - 8px - 2px);*/
+  display: none;
 }
-.resume-container .resume-item:nth-child(even) .circle{
+
+/* responsive layout - tablet and desktop*/
+@media only screen and (min-width: 600px) {
+.circle {
+  display: inline;
+  z-index: 1;
+}
+.resume-item:nth-child(odd) .circle{
+  left: calc(-2vw - 8px); /* 2vw between resume-item and middle bar ; half of circle width */
+}
+.resume-item:nth-child(even) .circle {
+  right: calc(-2vw - 8px);
   left: auto;
-  right: calc(-2vw - 10px);
-  
-  /* to make triangle / arrows
-  width: 0;
-	height: 0;
-	border-top: 8px solid transparent;
-	border-right: 16px solid var(--sec-color);
-	border-bottom: 8px solid transparent;
-  position: absolute;
-  top: calc(50% - 5px);
-  left: auto;
-  right: calc(-2vw);
-  z-index: 100;
-  */
+}
 }
 
 

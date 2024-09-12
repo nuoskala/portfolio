@@ -204,13 +204,13 @@ const ResumeItem = (prop) => {
 
   return (
       <div className='resume-item'>
-        {tags}
+        {circle}
+        <div className='tag-container'>{tags}</div>
         {dateLocation}
         {title}
         {description}
         {contents}
         {link}
-        {circle}
       </div>
   )
 }
