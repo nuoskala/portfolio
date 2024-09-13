@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { FaGithub } from "react-icons/fa";
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const NavBar = () => {
 
@@ -38,6 +38,15 @@ const NavBar = () => {
     window.open(url, '_blank', 'noopener, noreferrer');
   }
 
+  const isActiveStyle = ({ isActive }) =>
+    isActive
+      ? {
+        textDecoration: "underline solid .2rem hwb(204 62% 16%)",
+        textUnderlinePosition: "under",
+        textDecorationSkipInk: "none",
+      }
+      : { }
+
   // <Link className="navbar-link" to="/contact">contact</Link>
   // <Route path="/contact" element={<Contact />} />
 
@@ -46,9 +55,9 @@ const NavBar = () => {
 
         <div><p className='name'>Clara Nuoskala</p></div>
 
-        <Link className='navbar-link' to={'/home'}>home</Link>
-        <Link className='navbar-link' to={'/about'}>about</Link>
-        <Link className='navbar-link' to={'/projects'}>projects</Link>
+        <NavLink className='navbar-link' to={'/home'} style={isActiveStyle}>home</NavLink>
+        <NavLink className='navbar-link' to={'/about'} style={isActiveStyle}>about</NavLink>
+        <NavLink className='navbar-link' to={'/projects'} style={isActiveStyle}>projects</NavLink>
 
         <div className='navbar-middle'></div>
 
